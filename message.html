@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="af">
+<head>
+<meta charset="UTF-8">
+<title>Vir Isabella</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    font-family: "Georgia", serif;
+    background: linear-gradient(to bottom, #ff9966, #ff5e62);
+}
+
+/* Clouds */
+.cloud{
+    position:absolute;
+    background:rgba(255,255,255,0.85);
+    border-radius:50px;
+    width:220px;
+    height:70px;
+    opacity:0.9;
+    animation: moveClouds 90s linear infinite;
+}
+
+.cloud:before,
+.cloud:after{
+    content:"";
+    position:absolute;
+    background:rgba(255,255,255,0.85);
+    border-radius:50%;
+}
+
+.cloud:before{
+    width:110px;
+    height:90px;
+    top:-35px;
+    left:25px;
+}
+
+.cloud:after{
+    width:130px;
+    height:95px;
+    top:-45px;
+    right:25px;
+}
+
+@keyframes moveClouds{
+    from{ left:-300px; }
+    to{ left:110%; }
+}
+
+/* Water */
+.water{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:40%;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.15),
+        rgba(255,255,255,0.15) 10px,
+        rgba(0,0,0,0.05) 10px,
+        rgba(0,0,0,0.05) 20px
+    ),
+    linear-gradient(#ff7e5f, #2c3e50);
+    animation: waterMove 6s linear infinite;
+}
+
+@keyframes waterMove{
+    0%{ background-position:0 0, 0 0; }
+    100%{ background-position:200px 0, 0 0; }
+}
+
+/* Message */
+.message{
+    position:absolute;
+    top:32%;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:34px;
+    line-height:1.6;
+    text-shadow:0 2px 8px rgba(0,0,0,0.4);
+}
+
+.small{
+    font-size:22px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cloud" style="top:80px;"></div>
+<div class="cloud" style="top:160px; animation-duration:110s;"></div>
+
+<div class="message">
+<b>Isabella</b><br><br>
+Jou krag en waardigheid staan uit —<br>
+ek is trots op jou.<br><br>
+<span class="small">Spreuke 31:25</span><br>
+<span class="small">– Leon</span>
+</div>
+
+<div class="water"></div>
+
+</body>
+</html>
